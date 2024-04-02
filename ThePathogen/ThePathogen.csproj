@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ThePathogen</AssemblyName>
+    <Description>The Pathogen</Description>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\skill_resilience.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\skill_resilience.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UnityEngine.Modules" Version="2019.4.39" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Aki.Common">
+      <HintPath>..\dependencies\Aki.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Aki.Reflection">
+      <HintPath>..\dependencies\Aki.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\dependencies\Assembly-CSharp-pathogen.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\dependencies\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="bsg.console.core">
+      <HintPath>..\dependencies\bsg.console.core.dll</HintPath>
+    </Reference>
+    <Reference Include="Comfort">
+      <HintPath>..\dependencies\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
